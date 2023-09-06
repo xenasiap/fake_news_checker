@@ -1,5 +1,7 @@
+django
 bs4
 requests
 nltk
 scikit-learn
 joblib
+django-cors-headers
