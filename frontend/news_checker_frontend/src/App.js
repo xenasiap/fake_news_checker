@@ -5,6 +5,8 @@ import React, { useState } from 'react';
    const [manualText, setManualText] = useState("");
    const [result, setResult] = useState("");
    const [loading, setLoading] = useState(false);
+   const [error, setError] = useState("");
+
 
 
    const checkNews = async () => {
@@ -21,7 +23,15 @@ import React, { useState } from 'react';
      });
 
      const data = await response.json();
-     setResult(data.result);
+
+     if (data.error) {
+         setError(data.error);
+         setResult("");  // clear any previous result
+     } else {
+         setResult(data.result);
+         setError("");  // clear any previous errors
+     }
+
      setLoading(false);  // Set loading to false after the request completes
    };
 
@@ -37,13 +47,17 @@ import React, { useState } from 'react';
          onChange={(e) => setManualText(e.target.value)}
          placeholder="Or manually paste the article here"
        />
-       <button onClick={checkNews}>Check News</button>
+       <button onClick={checkNews}>Check News 1</button>
        {
            loading &&
            <div className="loader">
                <div className="spinner"></div>
                Please wait for the answer...
            </div>
+       }
+
+       {
+           error && <p className="error-message">{error}</p>
        }
 
        <p>{result}</p>

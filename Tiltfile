@@ -1,19 +1,3 @@
-# Frontend Configuration
-
-local_resource(
-  'frontend_dependencies',
-  serve_cmd='cd frontend/news_checker_frontend && npm install',
-  labels=['dependencies'],
-  deps=['./frontend/news_checker_frontend'],
-)
-
-local_resource(
-  'frontend',
-  serve_cmd='cd frontend/news_checker_frontend && npm start',
-  labels=['frontend'],
-  resource_deps=['frontend_dependencies']
-)
-
 # Backend Configuration
 
 local_resource(

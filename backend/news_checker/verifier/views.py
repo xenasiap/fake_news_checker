@@ -10,9 +10,11 @@ def check_news(request):
         url = data.get('url', '')
         manual_text = data.get('manual_text', '')
 
-        # If there's a URL, use it, otherwise use the manual text
-        article_text = extract_article_from_url(url) if url else manual_text
+        try:
+            # If there's a URL, use it, otherwise use the manual text
+            article_text = extract_article_from_url(url) if url else manual_text
+            result = predict_fake_news(article_text)
+            return JsonResponse({"result": result})
+        except ValueError as e:
+            return JsonResponse({"error": str(e)}, status=400)  # Using a 400 status for client error
 
-        result = predict_fake_news(article_text)
-
-        return JsonResponse({"result": result})

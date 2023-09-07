@@ -7,6 +7,10 @@ from nltk.corpus import stopwords
 
 def extract_article_from_url(url):
     response = requests.get(url)
+
+    if response.status_code != 200:
+        raise ValueError("The text cannot be grabbed. Please enter the article's text manually in the related field.")
+
     soup = BeautifulSoup(response.text, 'html.parser')
 
     text = [p.text for p in soup.find_all('p')]
@@ -15,6 +19,7 @@ def extract_article_from_url(url):
     lines = article_text.split('\n')
     filtered_lines = [line for line in lines if len(line) > 150]
     return '\n'.join(filtered_lines)
+
 
 # Initialization
 ps = WordNetLemmatizer()
