@@ -48,7 +48,7 @@ import './App.css';
          onChange={(e) => setManualText(e.target.value)}
          placeholder="Or manually paste the article here"
        />
-       <button onClick={checkNews}>Check News 1</button>
+       <button onClick={checkNews}>Check News</button>
        {
            loading &&
            <div className="loader">
