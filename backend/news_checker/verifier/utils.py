@@ -2,6 +2,8 @@ from bs4 import BeautifulSoup
 import requests
 import joblib
 import re
+import nltk
+nltk.data.path.append("./data")
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
 
