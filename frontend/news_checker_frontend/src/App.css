@@ -72,6 +72,16 @@
     font-size: 18px;
 }
 
+.true-news {
+    color: green;
+    font-weight: bold;
+}
+
+.fake-news {
+    color: red;
+    font-weight: bold;
+}
+
 input, textarea, button {
   padding: 10px;
   margin: 10px 0;

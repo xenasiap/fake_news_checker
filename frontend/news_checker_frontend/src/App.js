@@ -61,7 +61,10 @@ import './App.css';
            error && <p className="error-message">{error}</p>
        }
 
-       <p>{result}</p>
+       <p className={result === "True News" ? "true-news" : result === "Fake News" ? "fake-news" : ""}>
+           {result}
+       </p>
+
      </div>
    );
  }
