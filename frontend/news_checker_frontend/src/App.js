@@ -10,18 +10,21 @@ import './App.css';
 
 
 
-   const checkNews = async () => {
-     setLoading(true);  // Set loading to true before the request starts
-     const response = await fetch('http://127.0.0.1:8000/api/check-news/', {
-       method: 'POST',
-       headers: {
-         'Content-Type': 'application/json',
-       },
-       body: JSON.stringify({
-         url,
-         manual_text: manualText
-       }),
-     });
+const checkNews = async () => {
+    setResult("");  // Clear the previous result
+    setError("");
+    setLoading(true);  // Set loading to true before the request starts
+
+    const response = await fetch('http://127.0.0.1:8000/api/check-news/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            url,
+            manual_text: manualText
+        }),
+    });
 
      const data = await response.json();
 
@@ -35,6 +38,7 @@ import './App.css';
 
      setLoading(false);  // Set loading to false after the request completes
    };
+
 
    return (
      <div className="App">
