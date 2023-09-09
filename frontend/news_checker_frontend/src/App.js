@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import Title from './Title';
 
  function App() {
    const [url, setUrl] = useState("");
@@ -42,6 +43,7 @@ const checkNews = async () => {
 
    return (
      <div className="App">
+        <Title />
        <input
          value={url}
          onChange={(e) => setUrl(e.target.value)}
