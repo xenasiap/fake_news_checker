@@ -4,7 +4,7 @@ import './Title.css';
 function Title() {
   return (
     <div>
-      <h1 className="blue-text">You found the news but don't you want to know if it's true?</h1>
+      <h1 className="blue-text">You found the news! Don't you want to know if it's true?</h1>
     </div>
   )
 }
