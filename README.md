@@ -10,7 +10,7 @@ Here are the tools you'll need to install before you get started:
 
 - **Python 3:** The version that the application was tested with was the 3.11.5 version. Download it from the [official Python site](https://www.python.org/downloads/release/python-3115/)
 - **Node.js 18:** The version that the application was tested with was the 18.17.1 version. Download it from the [official NodeJs site](https://nodejs.org/en/blog/release/v18.17.1)
-- **Tilt:** Follow the instructions on the [official Tilt site](https://docs.tilt.dev/install.html) or use one of the below commands (depending on your OS):
+- **Tilt:** Follow the instructions on the [official Tilt site](https://docs.tilt.dev/install.html) (skip the docker desktop parts) or use one of the below commands (depending on your OS):
   ```bash
   #For Linux: 
   curl -fsSL https://raw.githubusercontent.com/tilt-dev/tilt/master/scripts/install.sh | bash
